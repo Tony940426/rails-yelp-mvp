@@ -1,0 +1,13 @@
+<div class="wrap">
+  <h1>All Your Restaurants</h1>
+  <%@restaurants.each do |restaurant| %>
+    <%= link_to restaurant_path(restaurant) do %>
+      <div class="cards">
+        <ul>
+          <li><%= restaurant.name %></li>
+          <p><i><%= restaurant.category.capitalize %></i></p>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>
