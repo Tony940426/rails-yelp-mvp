@@ -1,0 +1,10 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= @restaurant.category %></p>
+  <p><%= @restaurant.address %></p>
+  <%= link_to 'Delete',
+    restaurant_path(@restaurant),
+    data: { turbo_method: :delete, turbo_confirm: "Are You Sure?" }
+   %>
+</div>
+<%= link_to "Home", restaurants_path %>
