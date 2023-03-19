@@ -6,5 +6,15 @@
     restaurant_path(@restaurant),
     data: { turbo_method: :delete, turbo_confirm: "Are You Sure?" }
    %>
+   <% @restaurant.reviews.each do |review| %>
+    <ul>
+      <li><%= review.content %></li>
+      <%= link_to "Delete",
+        review_path(review),
+        data: {turbo_method: :delete, turbo_confirm: "Are You Sure?"}
+      %>
+    </ul>
+  <% end %>
+  <%= link_to "New Review", new_restaurant_review_path(@restaurant) %>
+   <%= link_to "Home", restaurants_path %>
 </div>
-<%= link_to "Home", restaurants_path %>
